@@ -1,6 +1,5 @@
-__version__ = "1.3"
-__author__ = "phpsh@googlegroups.com"
-__date__ = "Nov 20, 2008"
+__version__ = "1.3.1"
+__date__ = "May 11, 2013"
 
 from subprocess import Popen, PIPE, call
 from threading import Thread
