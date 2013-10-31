@@ -39,7 +39,6 @@ setup(
     scripts=["src/phpsh", "src/dbgp-phpsh.py"],
     data_files=[
         (config_dir, ["src/rc.php", "src/php_manual.db", "src/config.sample"]),
-        ("man/man1", ["src/doc/phpsh.1"]),
     ],
     requires=["pysqlite", "readline"],
 )
