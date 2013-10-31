@@ -1,4 +1,4 @@
-__version__ = "1.3.2"
+__version__ = "1.3.3"
 __date__ = "Oct 31, 2013"
 
 from subprocess import Popen, PIPE, call
