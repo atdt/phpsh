@@ -19,15 +19,17 @@ $_SERVER['TFBENV'] = 16777216;
 // FIXME: www/lib/thrift/packages/falcon/falcon.php is huge
 //  this is probably not the right fix, but we need it for now
 $memory_limit = ini_get('memory_limit');
-switch(strtolower($memory_limit[strlen($memory_limit)-1])) {
-  case 'g':
-    $memory_limit *= 1024;
-  case 'm':
-    $memory_limit *= 1024;
-  case 'k':
-    $memory_limit *= 1024;
+if ( intval($memory_limit) !== '-1' ) {
+	switch(strtolower($memory_limit[strlen($memory_limit)-1])) {
+	  case 'g':
+		$memory_limit *= 1024;
+	  case 'm':
+		$memory_limit *= 1024;
+	  case 'k':
+		$memory_limit *= 1024;
+	}
+	ini_set('memory_limit', $memory_limit * 2);
 }
-ini_set('memory_limit', $memory_limit * 2);
 
 if (version_compare(PHP_VERSION, '5.0.0', '<')) {
   fwrite(STDERR, 'Fatal error: phpsh requires PHP 5 or greater');
