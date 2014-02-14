@@ -19,7 +19,7 @@ $_SERVER['TFBENV'] = 16777216;
 // FIXME: www/lib/thrift/packages/falcon/falcon.php is huge
 //  this is probably not the right fix, but we need it for now
 $memory_limit = ini_get('memory_limit');
-if ( intval($memory_limit) !== '-1' ) {
+if ( intval($memory_limit) !== -1 ) {
 	switch(strtolower($memory_limit[strlen($memory_limit)-1])) {
 	  case 'g':
 		$memory_limit *= 1024;
