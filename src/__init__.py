@@ -1,5 +1,5 @@
-__version__ = "1.3.3"
-__date__ = "Oct 31, 2013"
+__version__ = "1.3.4"
+__date__ = "Feb 13, 2014"
 
 from subprocess import Popen, PIPE, call
 from threading import Thread
