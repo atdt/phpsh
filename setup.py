@@ -13,11 +13,10 @@ if len(sys.argv) > 1 and sys.argv[1] == "build":
     p = Popen(["make", "-C", make_dir])
     os.waitpid(p.pid, 0)
 
-# something better than this?
-if os.getenv("USER") == "root":
-    config_dir = "/etc/phpsh"
-else:
-    config_dir = os.getenv("HOME") + "/.phpsh"
+
+config_dir = os.path.expanduser('~/.phpsh')
+if config_dir == '~/.phpsh' or os.getuid() == 0:
+    config_dir = '/etc/phpsh'
 
 setup(
     name="phpsh",
